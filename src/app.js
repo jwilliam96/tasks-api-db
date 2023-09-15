@@ -24,6 +24,10 @@ const app = express();
 app.use(express.json());
 app.use(userRouter, categoryRouter, taksRouter);
 
+app.get("/", (req, res) => {
+  res.send("OK");
+});
+
 app.listen(PORT, () => {
   console.log(`servidor escuchando en el puerto ${PORT}`);
 });
